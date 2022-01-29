@@ -1,0 +1,40 @@
+// List of actions
+
+1. User clicks attack or defend and play commences
+1.1 Buttons are disabled for duration of play
+
+2. Cpu generates random response. Either attack or defend
+
+3. Speed is compared and user or cpu gets first turn in play
+
+4. Animation of a basic attack or defense 
+
+5. A console appears with some information regarding play
+
+6. Health Bars are adjusted accordingly
+
+7. Buttons are re-enabled
+
+8. Game over when user or cpu health reaches zero
+
+###################################################################################################################
+
+// To do items
+
+1.  Create text box with dynamic content according to play
+
+2. Code health of cpu and player to adjust correctly
+
+3. Create animation for play sequence
+
+4. Unit testing
+
+5. Disable buttons during play
+
+6. Use an arcade game style font - DONE!
+
+
+
+
+// To change test env
+//* "jest":{ "testEnvironment": "jsdom" } */

@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;700&family=Open+Sans:wght@300&family=Roboto:wght@300&family=VT323&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Dongle', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'VT323', monospace;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    padding: 40px;
+    background: url(./assets/img/T_1.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 20px;
+}
+
+.contaier {
+    width: 1280px;
+    height: 100px;
+    position: relative;
+}
+
+/* Reset Button */
+
+.reset {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    color: #fff;
+}
+
+.reset:hover {
+    cursor: pointer;
+}
+
+/* Characters Health Bars */
+
+.hp-bar {
+    width: 300px;
+    height: 40px;
+    border: 2px solid #000;
+    border-radius: 4px;
+}
+
+.player-health {
+    height: 100%;
+    width: 100%;
+    background-color: #00FF00;
+    transition: width 0.6s;
+}
+
+.opponent-health {
+    height: 100%;
+    width: 100%;
+    background-color: #00FF00;
+    transition: width 0.6s;
+}
+
+
+
+/* Characters */
+
+.characters {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.character img {
+    height: 300px;
+    width: 300px;
+    border-radius: 4px;
+    animation: 2s linear 0s infinite alternate move_character;
+}
+
+.name {
+    font-size: 36px;
+    color: #fff;
+    margin: 0;
+    border: none;
+}
+
+@keyframes move_character {from { padding-top: 0%; } to { padding-top: 5%; }}
+
+
+.player {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+h4 {
+    text-align: center;
+}
+
+/* Character Animations */
+
+.defence {
+    display: none;
+}
+
+.defence.active {
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 70px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    animation: 2s linear 0s 3 alternate defend;
+}
+
+@keyframes defend {
+    0% {
+        box-shadow: 0 0 0 20px 20px #0ff;
+    }
+    25% {
+        box-shadow: 0 0 20px 40px #FFF;
+    }
+    50% {
+        box-shadow: 0 0 20px 20px #0ff;
+    }
+    75% {
+        box-shadow: 0 0 20px 40px #FFF;
+    }
+}
+
+.attack-vector {
+    display: none;
+}
+
+.attack-vector.active {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.attack {
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    animation: 500ms linear 0s 6 alternate attack;
+    z-index: 1000;
+}
+
+@keyframes attack {
+    0% {
+        background-color: rgba(255, 0, 0, 0.6);
+        transform: rotate(90deg);
+        box-shadow: 0 0 80px 20px red;
+    }
+    25% {
+        background-color: rgba(0, 0, 0, 0);
+        transform: rotate(180deg);
+        box-shadow: 0 0 80px 20px red;
+    }
+    50% {
+        background-color: rgba(255, 0, 0, 0.6);
+        transform: rotate(240deg);
+        box-shadow: 0 0 80px 20px red;
+    }
+    75% {
+        background-color: rgba(0, 0, 0, 0);
+        transform: rotate(360deg);
+        box-shadow: 0 0 80px 20px red;
+    }
+}
+/* Player Options */
+
+.select-moves {
+    display: none;
+}
+
+.select-moves.active {
+    display: block;
+}
+
+.btn {
+    margin: 30px;
+    margin-left: 40px;
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+/* Gaming Console */
+.game-console {
+    width: 400px;
+    height: 150px;
+    padding: 0px 10px;
+    font-size: 22px;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.7);
+    border: 4px solid #000;
+    border-radius: 10px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: scroll;
+}
+
+/* Modal */
+.modal {
+    display: none;
+}
+
+.modal.active {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-text {
+    font-size: 36px;
+    color: #fff;
+}
+
+.modal-btn {
+    font-size: 28px;
+    border: none;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.modal-btn:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* Reference */
+.vector {
+    color: #FFF;
+    position: absolute;
+    top: 10px; 
+    right: 10px;
+}

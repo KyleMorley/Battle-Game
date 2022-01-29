@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Game</title>
+</head>
+<body>
+    <div class="container">
+        <div class='characters'>
+            <div class='character player' id='player'>
+                <div class="hp-bar">
+                    <div class='player-health' id='player-health'></div>
+                </div>
+                <img id='player-img' src="/assets/img/wolf-head.svg" alt="P1: Wolf Head">
+                <h4 class='name'>Wolf</h4>
+                <div class='moves'>
+                    <div class='select-moves' id='select-moves'>
+                        <button class="btn" id='attack'>Attack</button>
+                        <button class="btn" id='defend'>Defend</button>
+                    </div>
+                </div>
+            </div>
+            <div class='character' id='opponent'>
+                <div class="hp-bar">
+                    <div class='opponent-health' id='opponent-health'></div>
+                </div>
+                <img id='opponent-img' src="/assets/img/cultist.svg" alt="Opponent">
+                <h4 class='name'>Cult Leader</h4>
+            </div>
+        </div>
+    
+        <div class="defence" id='defence'></div>
+        <div class="attack-vector" id='attack-vector'><div class='attack'></div></div>
+        <div class='game-console' id='console'></div>
+    </div>
+    <button class="reset" id='reset-game'>Reset Game</button>
+    <div class='modal' id='modal'>
+        <p class='modal-text' id='modal-text'>GAME OVER!</p>
+        <button class="modal-btn" id='modal-btn'>Play Again</button>
+    </div>
+
+    
+
+    <a class='vector' href="https://www.vecteezy.com/free-vector/nature" target='_blank'>Nature Vectors by Vecteezy</a>
+    <script src="app.js"></script>
+</body>
+</html>
